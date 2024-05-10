@@ -3,25 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login Japaçaí</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo/media-query.css">
 </head>
 <body>
     <main>
      <section id="login">
-        <div id="img">
-    
-        </div>
+     <div id="img"></div>
+        
         <div id="formulario">
             <h1>Login</h1>
+            <div class="barra-horizontal"></div>
+            
             <p>Seja bem-vindo(a).Faça login para acessar sua conta!</p>
-            <form action="login.php" method="post">
-                
-            </form>
-
-        </div>
-
-     </section>   
+            <form action="login.php" method="post"><br>
+            <div class="box">
+                  
+                 <input type="text" name="e-mail" id="e-mail" placeholder="e-mail">
+                 <input type="password" name="senha" id="senha" placeholder="senha">
+            </div>
+            <div class="Lembrar-me"></div>
+                <input type="checkbox"/>
+                        Lembrar-me      
+            <input type="submit" value="Login">
+                    <a href="password.html"></a>
+                    <br><a href="esqueci.html" class="botao">
+                            Esqueceu a senha?
+                    </a>
+                    <a href="account.html">
+                    <br>Criar uma conta
+                    </a>
+         </form>
+         </section>   
     </main>
 </body>
 </html>
