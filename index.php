@@ -30,24 +30,24 @@ session_start();
             <div>
                 <center>
                     <?php
-            // Verificando se há uma mensagem na URL
+        
         if ( isset( $_GET[ 'message' ] ) ) {
-            // Exibindo o alerta Bootstrap com a mensagem
+           
         echo '<div class="alert alert-success" role="alert">' . htmlspecialchars( $_GET[ 'message' ] ) . '</div>';
         }
-        // Verificando se o formulário foi enviado
+      
     if (isset($_POST['mais_pedidos'])) {
-        // Se o usuário selecionou "Sim"
+        
         if ($_POST['mais_pedidos'] == 'sim') {
-            // Redirecionar para finalizar_pedido.php
+            
             header("Location: index.php");
-            exit; // Importante para evitar que o código continue a ser executado após o redirecionamento
+            exit; 
         }
-        // Se o usuário selecionou "Não"
+       
         elseif ($_POST['mais_pedidos'] == 'nao') {
-            // Redirecionar para finalizar_pedido.php
+           
             header("Location: finalizar_pedido.php");
-            exit; // Importante para evitar que o código continue a ser executado após o redirecionamento
+            exit; 
         }
     }
         ?>
