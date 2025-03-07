@@ -1,5 +1,5 @@
 <?php
-// Conectar ao banco de dados (use suas credenciais)
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -11,7 +11,6 @@ if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
 
-// Verifica se há um pedido a ser excluído
 if (isset($_GET['delete_id'])) {
     $delete_id = $_GET['delete_id'];
     $delete_sql = "DELETE FROM pedidos WHERE id = ?";
@@ -19,11 +18,11 @@ if (isset($_GET['delete_id'])) {
     $stmt->bind_param("i", $delete_id);
     $stmt->execute();
     $stmt->close();
-    header("Location: ver_pedidos.php"); // Redireciona para evitar reenvio do formulário
+    header("Location: ver_pedidos.php"); 
     exit();
 }
 
-// Recuperar pedidos do banco de dados
+
 $sql = "SELECT id, item, price, options FROM pedidos";
 $result = $conn->query($sql);
 ?>
@@ -58,7 +57,7 @@ $result = $conn->query($sql);
         <tbody>
             <?php
             if ($result->num_rows > 0) {
-                // Saída de cada linha de dados
+                
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $row["id"] . "</td>";
