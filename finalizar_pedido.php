@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['orders']) && !empty($_SESSION['orders'])) {
     $orders = $_SESSION['orders'];
 
-    // Conectar ao banco de dados (use suas credenciais)
+   
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -15,7 +15,6 @@ if (isset($_SESSION['orders']) && !empty($_SESSION['orders'])) {
         die("Falha na conexão: " . $conn->connect_error);
     }
 
-    // Inserir cada pedido na base de dados
     foreach ($orders as $order) {
         $item = $order['item'];
         $price = $order['price'];
@@ -30,18 +29,15 @@ if (isset($_SESSION['orders']) && !empty($_SESSION['orders'])) {
 
     $conn->close();
 
-    // Limpar os pedidos da sessão
+   
     unset($_SESSION['orders']);    
 
-    // echo "<h1>Pedido Confirmado</h1>";
-    // echo "<p>Seu pedido foi registrado com sucesso.</p>";
-
-    // Redirecionar de volta para o index.php após 2 segundos
+   
     header("refresh:0;url=ver_pedidos.php");
     exit();
 } else {
     echo "<p>Nenhum pedido encontrado.</p>";
-    // Redirecionar de volta para o index.php após 2 segundos
+   
     header("refresh:0;url=index.php");
     exit();
 }
