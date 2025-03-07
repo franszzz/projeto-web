@@ -1,5 +1,5 @@
 <?php
-// Conectar ao banco de dados (use suas credenciais)
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
 
-// Verifica se o formulário de edição foi enviado
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];
     $item = $_POST['item'];
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit();
 }
 
-// Verifica se há um pedido a ser editado
+
 if (isset($_GET['edit_id'])) {
     $edit_id = $_GET['edit_id'];
     $select_sql = "SELECT id, item, price, options FROM pedidos WHERE id = ?";
