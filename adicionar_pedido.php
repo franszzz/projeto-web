@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $_SESSION['orders'][] = $pedido;
 
-    // Passando a mensagem pela URL
+   
     header('Location: index.php?message=Pedido%20adicionado%20com%20sucesso!');
     exit();
 }
